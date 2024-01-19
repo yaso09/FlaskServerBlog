@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Flask Server</title>
+        <style>
+            body {
+                font-family: Helvetica, Arial, Sans-Serif;
+                background-color: #000;
+                color: #fff;
+            }
+            #blogs div {
+                border: 1px dashed #fff;
+                border-radius: 8px;
+                padding: 1rem;
+                cursor: pointer;
+            }
+            #blogs div:hover {
+                background: #545454;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hi there!</h1>
+        <p>Welcome to my web site.</p>
+        <div>
+            <h3>Who am I?</h3>
+            <p>
+                I'm Yasir Eymen KAYABAŞI.
+                A programmer and student
+                from Bursa, Turkia.
+                I'm developing web & mobile
+                apps and desktop apps.
+                Currently, I'm going to
+                high school.
+            </p>
+        </div>
+        <div>
+            <h3>See my blogs</h3>
+            <div id="blogs"></div>
+        </div>
+        <script>
+            function addBlogToList(blogDAT) {
+                const blogs = document.querySelector("#blogs");
+                const blog = document.createElement("div");
+                const title = document.createElement("h4");
+                title.append(blogDAT.title);
+                blog.appendChild(title);
+                const short = document.createElement("p");
+                short.append(blogDAT.short);
+                blog.appendChild(short);
+                const date = document.createElement("small");
+                date.append(blogDAT.date);
+                blog.appendChild(date);
+                blog.addEventListener(
+                    "click", function () {
+                        window.location.href =
+                            "/blog/" + blogDAT.id;
+                    }
+                )
+                blogs.appendChild(blog);
+                const br = document.createElement("br");
+                blogs.appendChild(br);
+            }
+            fetch("./api/blogs")
+                .then(dat => dat.json())
+                .then(json => {
+                    json.blogs.forEach(blogDAT => {
+                        addBlogToList(blogDAT);
+                    })
+                })
+                .catch(err => {
+                    throw new Error(err);
+                })
+        </script>
+    </body>
+</html>
