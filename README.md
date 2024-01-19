@@ -5,5 +5,5 @@ Using `/FlaskServer/db/blogs.json` file for saving blogs. You can see example in
 **Download code**
 
 ```bash
-    git clone https://github.com/yaso09/FlaskServerBlog.git
+git clone https://github.com/yaso09/FlaskServerBlog.git
 ```
