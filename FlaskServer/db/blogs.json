@@ -1,0 +1,11 @@
+{
+  "blogs": [
+    {
+      "id": 0,
+      "title": "Hello World!",
+      "short": "This is my first blog!",
+      "date": "19.01.2024",
+      "text": "This is my first blog! OMG!"
+    }
+  ]
+}
