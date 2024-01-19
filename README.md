@@ -2,6 +2,8 @@
 
 Using `/FlaskServer/db/blogs.json` file for saving blogs. You can see example in file. Using `/FlaskServer/FlaskServer.py` file for server. Using `/FlaskServer/static` folder for saving HTML files. I just put `index.html` file. I used and recommend Visual Studio for developing.
 
+<a href="https://youtu.be/qV7aNpNvvDc">YouTube video</a>
+
 **Download code**
 
 ```bash
